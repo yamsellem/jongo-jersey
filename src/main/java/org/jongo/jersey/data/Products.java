@@ -20,7 +20,7 @@ public class Products {
     static {
         Mongo mongo;
         try {
-            mongo = new Mongo("127.0.0.1", 27017);
+            mongo = new Mongo();
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);
         } catch (MongoException e) {

@@ -1,9 +1,12 @@
 package org.jongo.jersey.representation;
 
-import org.bson.types.ObjectId;
+import org.jongo.marshall.jackson.oid.ObjectId;
 
 public class ServerProduct {
-    ObjectId _id;
+
+    @ObjectId
+    String _id; // works also with type org.bson.types.ObjectId;
+
     String name;
     int price;
 

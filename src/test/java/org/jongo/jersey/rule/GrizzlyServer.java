@@ -2,7 +2,6 @@ package org.jongo.jersey.rule;
 
 import static com.sun.jersey.api.core.ResourceConfig.PROPERTY_CONTAINER_REQUEST_FILTERS;
 import static com.sun.jersey.api.core.ResourceConfig.PROPERTY_CONTAINER_RESPONSE_FILTERS;
-import static com.sun.jersey.api.json.JSONConfiguration.FEATURE_POJO_MAPPING;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 
@@ -23,7 +22,6 @@ public class GrizzlyServer extends Server {
 
     private ResourceConfig newConfig() {
         ResourceConfig rc = new PackagesResourceConfig("org.jongo.jersey.resource", "org.jongo.jersey.provider");
-        rc.getFeatures().put(FEATURE_POJO_MAPPING, true);
         rc.getProperties().put(PROPERTY_CONTAINER_REQUEST_FILTERS, new LoggingFilter());
         rc.getProperties().put(PROPERTY_CONTAINER_RESPONSE_FILTERS, new LoggingFilter());
         return rc;

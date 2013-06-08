@@ -1,7 +1,6 @@
 package org.jongo.jersey.resource;
 
 import static com.sun.jersey.api.client.ClientResponse.Status.NOT_FOUND;
-import static com.sun.jersey.api.json.JSONConfiguration.FEATURE_POJO_MAPPING;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import static org.fest.assertions.Assertions.assertThat;
 import static org.jongo.jersey.view.ProductAssert.assertThat;
@@ -34,7 +33,6 @@ public class ProductResourceTest {
     public void createJacksonCustomClient() {
         ClientConfig cc = new DefaultClientConfig();
         cc.getClasses().add(JacksonMapperProvider.class);
-        cc.getFeatures().put(FEATURE_POJO_MAPPING, true);
         client = Client.create(cc);
     }
 
